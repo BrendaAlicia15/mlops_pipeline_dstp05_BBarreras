@@ -1,4 +1,4 @@
-# Proyecto de Modelado Predictivo de Créditos
+# Proyecto de Modelado Predictivo de Créditos.git
 
 Este repositorio contiene el desarrollo de un **modelo de machine learning** para predecir el comportamiento de nuevos usuarios de crédito en una empresa financiera.  
 El proyecto se enmarca dentro de un flujo **MLOps**, garantizando buenas prácticas de colaboración, pruebas, despliegue y monitoreo.
