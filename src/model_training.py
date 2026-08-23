@@ -14,10 +14,12 @@ from sklearn.model_selection import (
 
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
-from src.ft_engineering import build_preprocessor, _get_feature_columns
+#from src.ft_engineering import build_preprocessor, _get_feature_columns
+from ft_engineering import build_preprocessor, _get_feature_columns
 
 # IMPORTANTE: carga de datos
-from src.cargar_datos import cargarDatos
+#from src.cargar_datos import cargarDatos
+from cargar_datos import cargarDatos
 
 # modelo (puedes cambiarlo)
 from sklearn.ensemble import RandomForestClassifier
@@ -51,7 +53,7 @@ def build_model(
     # 1. DATA
     # ---------------------------
     X = dataset[names_of_x_cols].copy() # Riesgo de Leakage
-    # 🔥 FIX: asegurar tipos consistentes
+    #  FIX: asegurar tipos consistentes
     for col in ["tipo_laboral", "tendencia_ingresos", "tipo_credito"]:
         if col in X.columns:
             X[col] = X[col].astype(str)
@@ -140,8 +142,8 @@ def build_model(
     joblib.dump(model, save_path_modelo)
     joblib.dump((x_test, y_test),save_path_data)
 
-    print(f"✅ Modelo guardado en: {save_path_modelo}")
-    print(f"✅ Data guardada en: {save_path_data}")
+    print(f" Modelo guardado en: {save_path_modelo}")
+    print(f" Data guardada en: {save_path_data}")
 
     return {
         "train": train_summary,
@@ -154,14 +156,14 @@ def build_model(
 # ==========================================
 if __name__ == "__main__":
 
-    print("🚀 Iniciando entrenamiento...")
+    print(" Iniciando entrenamiento...")
 
     # ---------------------------
     # 1. CARGAR DATOS
     # ---------------------------
     df = cargarDatos()
 
-    print(f"📊 Datos cargados: {df.shape}")
+    print(f" Datos cargados: {df.shape}")
 
     # ---------------------------
     # 2. CONFIGURACIÓN
@@ -202,5 +204,5 @@ if __name__ == "__main__":
         data_params=data_params
     )
 
-    print("✅ Entrenamiento terminado")
+    print(" Entrenamiento terminado")
     print(result)
