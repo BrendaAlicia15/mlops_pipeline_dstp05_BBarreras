@@ -89,3 +89,4 @@ def build_preprocessor(numeric_cols, categorical_cols, ordinal_cols):
         remainder="drop",
         verbose_feature_names_out=False
     )
+
