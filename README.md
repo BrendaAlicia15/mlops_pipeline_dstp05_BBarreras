@@ -9,24 +9,22 @@ El proyecto se enmarca dentro de un flujo **MLOps**, garantizando buenas prácti
 ```bash
 ├── mlops_pipeline/
 │ └── src/
-│ ├── Cargar_datos.ipynb
+│ ├── Cargar_datos.py
 │ ├── comprension_eda.ipynb
-│ ├── ft_engineering.py
-│ ├── heuristic_model.py
+│ ├── ft_engineering.py 
 │ ├── model_training.py
 │ ├── model_deploy.py
 │ ├── model_evaluation.py
 │ └── model_monitoring.py
-├── Base_de_datos.csv
+├── Base_de_datos.xls
 ├── requirements.txt
 ├── .gitignore
-├── readme.md
-└── set_up.bat
-```
+└── README.md
+ ```
 
 ---
 
-## 🚀 Flujo de trabajo
+##  Flujo de trabajo
 
 1. **Cargar_datos.ipynb**  
    Notebook para cargar datos desde un CSV de ejemplo.  
@@ -39,23 +37,20 @@ El proyecto se enmarca dentro de un flujo **MLOps**, garantizando buenas prácti
    Creación de *features* y división de datos en entrenamiento y validación.  
    Incluye construcción de pipelines.
 
-4. **heuristic_model.py**  
-   Modelo base de referencia (benchmark heurístico).
-
-5. **model_training.py**  
+4. **model_training.py**  
    Entrenamiento y evaluación de múltiples modelos.  
    - Funciones clave: `summarize_classification` y `build_model`.  
    - Incluye tablas comparativas y visualizaciones.
 
-6. **model_deploy.py**  
+5. **model_deploy.py**  
    Despliegue del mejor modelo seleccionado.  
    - Creación de una imagen con dependencias y código.  
    - Exposición de un **endpoint** para predicciones batch.
 
-7. **model_evaluation.py**  
+6. **model_evaluation.py**  
    Generación de métricas del modelo desplegado en un dashboard de evaluación.
 
-8. **model_monitoring.py**  
+7. **model_monitoring.py**  
    Monitoreo periódico para:  
    - Detectar *data drift*.  
    - Comparar predicciones vs. datos reales.  
@@ -63,11 +58,11 @@ El proyecto se enmarca dentro de un flujo **MLOps**, garantizando buenas prácti
 
 ---
 
-## 🚀 Despliegue y Ejecución del Modelo con Docker
+##  Despliegue y Ejecución del Modelo con Docker
 
 Una vez clonado el repositorio se puede levantar el servicio en docker
 
-### 📋 Prerrequisitos
+###  Prerrequisitos
 
 *   **Docker Desktop**: Asegúrate de que Docker esté instalado y en ejecución en tu máquina. Puedes descargarlo desde [el sitio oficial de Docker](https://www.docker.com/products/docker-desktop/).
 *   **Git**: Necesitas Git para clonar este repositorio.
